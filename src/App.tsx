@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import List from "./components/Lists";
 
 interface IState {
   people: {
@@ -13,7 +14,7 @@ interface IState {
 
 function App() {
   // const [number, setNumber] = useState<number>(5);
-  const [people, setPeople] = useState<IState["people"]>();
+  const [people, setPeople] = useState<IState["people"]>([]);
 
   // const changeNumber = () => {
   //   let result = number + 1;
@@ -25,6 +26,8 @@ function App() {
       <h1>People Invited to my Party</h1>
       {/* <button onClick={() => changeNumber()}>Clckic meh</button> */}
       {/* {number} */}
+      {/* Passing the props to the component */}
+      <List people={people} />
     </div>
   );
 }
